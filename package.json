@@ -1,0 +1,26 @@
+{
+  "name": "@adonisjs/generic-exceptions",
+  "version": "1.0.0",
+  "description": "List of generic exceptions to be used in all other repos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "adonisjs",
+    "adonis",
+    "exceptions"
+  ],
+  "author": "virk",
+  "license": "MIT",
+  "dependencies": {
+    "node-exceptions": "^2.0.2",
+    "upcast": "^1.0.4"
+  },
+  "devDependencies": {
+    "japa": "^1.0.3",
+    "japa-cli": "^1.0.1",
+    "standard": "^10.0.2",
+    "tern": "^0.21.0"
+  }
+}
