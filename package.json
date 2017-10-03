@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "List of generic exceptions to be used in all other repos",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adonisjs/adonis-generic-exceptions.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
