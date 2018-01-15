@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
 */
 
+const { HttpException, LogicalException } = require('node-exceptions')
 const InvalidArgumentException = require('./src/InvalidArgumentException')
 const RuntimeException = require('./src/RuntimeException')
-const { HttpException, LogicalException } = require('node-exceptions')
 
 module.exports = {
   InvalidArgumentException,

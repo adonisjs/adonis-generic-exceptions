@@ -19,6 +19,10 @@ const NE = require('node-exceptions')
  * @class InvalidArgumentException
  */
 class InvalidArgumentException extends NE.InvalidArgumentException {
+  static get repo () {
+    return 'adonisjs/errors'
+  }
+
   /**
    * Throw an exception when there is a missing parameter
    *
@@ -32,8 +36,8 @@ class InvalidArgumentException extends NE.InvalidArgumentException {
    * @return {InvalidArgumentException}
    */
   static missingParameter (method, parameterName, position) {
-    const message = `Missing parameter ${parameterName} expected by ${method} as ${position} parameter`
-    return new this(message, 500, 'E_MISSING_PARAMETER')
+    const message = `Missing parameter ${parameterName} expected by ${method} method as ${position} parameter`
+    return new this(message, 500, 'E_MISSING_PARAMETER', this.repo)
   }
 
   /**
@@ -48,8 +52,11 @@ class InvalidArgumentException extends NE.InvalidArgumentException {
    * @return {InvalidArgumentException}
    */
   static invalidParameter (errorMessage, originalValue) {
-    errorMessage = originalValue ? `${errorMessage} instead received ${upcast.type(originalValue)}` : errorMessage
-    return new this(errorMessage, 500, 'E_INVALID_PARAMETER')
+    const message = originalValue !== undefined
+    ? `${errorMessage} instead received ${upcast.type(originalValue)}`
+    : errorMessage
+
+    return new this(message, 500, 'E_INVALID_PARAMETER', this.repo)
   }
 
   /**
@@ -65,7 +72,7 @@ class InvalidArgumentException extends NE.InvalidArgumentException {
    * @return {InvalidArgumentException}
    */
   static invoke (message, status = 500, code = 'E_INVALID_ARGUMENT') {
-    return new this(message, status, code)
+    return new this(message, status, code, this.repo)
   }
 }
 
