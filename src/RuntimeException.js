@@ -18,6 +18,10 @@ const NE = require('node-exceptions')
  * @class RuntimeException
  */
 class RuntimeException extends NE.RuntimeException {
+  static get repo () {
+    return 'adonisjs/errors'
+  }
+
   /**
    * Missing config exception is thrown when configuration
    * is not define for a given key
@@ -31,7 +35,7 @@ class RuntimeException extends NE.RuntimeException {
    */
   static missingConfig (key, configLocation) {
     const message = `${key} is not defined inside ${configLocation} file`
-    return new this(message, 500, 'E_MISSING_CONFIG')
+    return new this(message, 500, 'E_MISSING_CONFIG', this.repo)
   }
 
   /**
@@ -47,7 +51,7 @@ class RuntimeException extends NE.RuntimeException {
    */
   static missingAppKey (provider) {
     const message = `Make sure to define appKey inside config/app.js file before using ${provider} provider`
-    return new this(message, 500, 'E_MISSING_APP_KEY')
+    return new this(message, 500, 'E_MISSING_APP_KEY', this.repo)
   }
 
   /**
@@ -56,15 +60,16 @@ class RuntimeException extends NE.RuntimeException {
    *
    * @method incompleteConfig
    *
-   * @param  {String}         forKey
    * @param  {Array}          missingKeys
    * @param  {String}         file
+   * @param  {String}         forKey
    *
    * @return {RuntimeException}
    */
-  static incompleteConfig (forKey, missingKeys, file) {
-    const message = `Make sure to define ${missingKeys.join(', ')} on ${forKey} inside ${file}`
-    return new this(message, 500, 'E_INCOMPLETE_CONFIG')
+  static incompleteConfig (missingKeys, file, forKey) {
+    const baseMessage = `Make sure to define ${missingKeys.join(', ')}`
+    const message = forKey ? `${baseMessage} on ${forKey} inside ${file}` : `${baseMessage} inside ${file}`
+    return new this(message, 500, 'E_INCOMPLETE_CONFIG', this.repo)
   }
 
   /**
@@ -80,7 +85,7 @@ class RuntimeException extends NE.RuntimeException {
    * @return {RuntimeException}
    */
   static invoke (message, status = 500, code = 'E_RUNTIME_ERROR') {
-    return new this(message, status, code)
+    return new this(message, status, code, this.repo)
   }
 }
 
