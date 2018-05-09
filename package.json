@@ -8,7 +8,9 @@
     "url": "git+https://github.com/adonisjs/adonis-generic-exceptions.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "standard",
+    "pretest": "npm run lint",
+    "test": "japa test.js"
   },
   "keywords": [
     "adonisjs",
