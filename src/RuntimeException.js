@@ -24,7 +24,7 @@ class RuntimeException extends NE.RuntimeException {
 
   /**
    * Missing config exception is thrown when configuration
-   * is not define for a given key
+   * is not defined for a given key
    *
    * @method missingConfig
    *
