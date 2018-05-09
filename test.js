@@ -27,7 +27,7 @@ test('exported modules should be instantiable', (assert) => {
 test('each exception should link to errors repo', (assert) => {
   assert.equal(
     GE.InvalidArgumentException.missingParameter('lucid', 'username', '2nd').message,
-    'E_MISSING_PARAMETER: Missing parameter username expected by lucid as 2nd parameter\n> More details: https://err.sh/adonisjs/errors/E_MISSING_PARAMETER'
+    'E_MISSING_PARAMETER: Missing parameter username expected by lucid method as 2nd parameter\n> More details: https://err.sh/adonisjs/errors/E_MISSING_PARAMETER'
   )
 
   assert.equal(
