@@ -53,6 +53,20 @@ class RuntimeException extends NE.RuntimeException {
     const message = `Make sure to define appKey inside config/app.js file before using ${provider} provider`
     return new this(message, 500, 'E_MISSING_APP_KEY', this.repo)
   }
+  /**
+   * This exception is raised when environment variable
+   * is not defined, but is required for app operation.
+   *
+   * @method missingEnvKey
+   *
+   * @param  {String}      environment variable name (e.g. `HOME` or `PATH`)
+   *
+   * @return {RuntimeException}
+   */
+  static missingEnvKey (key) {
+    const message = `Make sure to define environment variable ${key}.`
+    return new this(message, 500, 'E_MISSING_ENV_KEY', this.repo)
+  }
 
   /**
    * This exception is raised when configuration is not

@@ -46,6 +46,11 @@ test('each exception should link to errors repo', (assert) => {
   )
 
   assert.equal(
+    GE.RuntimeException.missingEnvKey('FOO').message,
+    'E_MISSING_ENV_KEY: Make sure to define environment variable FOO.\n> More details: https://err.sh/adonisjs/errors/E_MISSING_ENV_KEY'
+  )
+
+  assert.equal(
     GE.RuntimeException.incompleteConfig(['foo'], 'bar').message,
     'E_INCOMPLETE_CONFIG: Make sure to define foo inside bar\n> More details: https://err.sh/adonisjs/errors/E_INCOMPLETE_CONFIG'
   )
