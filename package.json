@@ -1,6 +1,6 @@
 {
   "name": "@adonisjs/generic-exceptions",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "List of generic exceptions to be used in all other repos",
   "main": "index.js",
   "repository": {
@@ -8,7 +8,9 @@
     "url": "git+https://github.com/adonisjs/adonis-generic-exceptions.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "standard",
+    "pretest": "npm run lint",
+    "test": "japa test.js"
   },
   "keywords": [
     "adonisjs",
