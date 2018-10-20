@@ -8,7 +8,7 @@ This repo contains some helpful classes to throw uniform exceptions through out 
 ## Setup
 Install package using npm.
 
-```js
+```shell
 npm i @adonisjs/generic-exceptions
 ```
 
