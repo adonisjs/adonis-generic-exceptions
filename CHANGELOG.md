@@ -1,3 +1,18 @@
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/adonisjs/adonis-generic-exceptions/compare/v2.0.1...v3.0.0) (2018-10-20)
+
+
+### Features
+
+* **rewrite:** rewrite in typescript ([57a086a](https://github.com/adonisjs/adonis-generic-exceptions/commit/57a086a))
+
+
+### BREAKING CHANGES
+
+* **rewrite:** Remove custom methods from InvalidArgumentException in favour of using ow
+
+
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/adonisjs/adonis-generic-exceptions/compare/v2.0.0...v2.0.1) (2018-05-11)
 
