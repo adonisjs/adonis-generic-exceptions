@@ -114,3 +114,6 @@ Same as creating a new instance, but the default error `code` is used automatica
 throw InvalidArgumentException.invoke('Custom message', 500)
 throw RuntimeException.invoke('Custom message', 500)
 ```
+
+[npm-image]: https://img.shields.io/npm/v/@adonisjs/generic-exceptions.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/@adonisjs/generic-exceptions
