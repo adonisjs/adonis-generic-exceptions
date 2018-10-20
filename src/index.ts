@@ -1,3 +1,7 @@
+/**
+ * @module main
+ */
+
 /*
  * adonis-generic-exceptions
  *
