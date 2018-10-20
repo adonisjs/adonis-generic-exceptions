@@ -1,6 +1,6 @@
 {
   "name": "@adonisjs/generic-exceptions",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "List of generic exceptions to be used in all other repos",
   "main": "build/src/index",
   "files": [
